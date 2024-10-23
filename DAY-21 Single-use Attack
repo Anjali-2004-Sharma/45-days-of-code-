@@ -1,0 +1,31 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner sc = new Scanner(System.in);
+        
+        int T = sc.nextInt(); 
+        for (int t = 0; t < T; t++) {
+            int H = sc.nextInt(); 
+            int X = sc.nextInt(); 
+            int Y = sc.nextInt(); 
+            int normalAttacks = (int) Math.ceil((double) H / X);
+            int specialAndNormalAttacks;
+            if (H - Y <= 0) 
+            {
+                specialAndNormalAttacks = 1; 
+            }
+            else
+            {
+                specialAndNormalAttacks = 1 + (int) Math.ceil((double) (H - Y) / X); 
+            }
+            System.out.println(Math.min(normalAttacks, specialAndNormalAttacks));
+        }
+        
+        sc.close();
+    }
+}
