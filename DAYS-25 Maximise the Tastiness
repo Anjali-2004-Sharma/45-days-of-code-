@@ -1,0 +1,32 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read the number of test cases
+        int T = scanner.nextInt();
+        
+        for (int i = 0; i < T; i++) {
+            // Read the tastiness values for each test case
+            int a = scanner.nextInt();
+            int b = scanner.nextInt();
+            int c = scanner.nextInt();
+            int d = scanner.nextInt();
+            
+            // Calculate the maximum possible tastiness
+            int maxTastiness = Math.max(a + c, b + c);
+            maxTastiness = Math.max(maxTastiness, a + d);
+            maxTastiness = Math.max(maxTastiness, b + d);
+            
+            // Output the result for this test case
+            System.out.println(maxTastiness);
+        }
+        
+        scanner.close();
+    }
+}
