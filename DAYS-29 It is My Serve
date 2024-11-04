@@ -1,0 +1,32 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read the number of test cases
+        int T = scanner.nextInt();
+        
+        for (int t = 0; t < T; t++) {
+            // Read scores P and Q
+            int P = scanner.nextInt();
+            int Q = scanner.nextInt();
+            
+            // Calculate total serves
+            int totalServes = P + Q;
+            
+            // Determine whose serve it is
+            if ((totalServes / 2) % 2 == 0) {
+                System.out.println("Alice");
+            } else {
+                System.out.println("Bob");
+            }
+        }
+        
+        scanner.close();
+    }
+}
