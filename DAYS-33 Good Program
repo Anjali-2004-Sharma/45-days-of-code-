@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class GoodProgram {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read the number of test cases
+        int T = scanner.nextInt();
+        
+        // Process each test case
+        for (int i = 0; i < T; i++) {
+            int N = scanner.nextInt();
+            
+            // Check if N is a multiple of 4
+            if (N % 4 == 0) {
+                System.out.println("Good");
+            } else {
+                System.out.println("Not Good");
+            }
+        }
+        
+        scanner.close();
+    }
+}
