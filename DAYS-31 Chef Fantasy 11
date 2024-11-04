@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class ChefFantasy11 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read the number of test cases
+        int T = scanner.nextInt();
+        
+        for (int t = 0; t < T; t++) {
+            // Read the number of players Chef is considering
+            int N = scanner.nextInt();
+            
+            // Calculate the number of choices for captain and vice-captain
+            int choices = N * (N - 1);
+            
+            // Output the result
+            System.out.println(choices);
+        }
+        
+        scanner.close();
+    }
+}
