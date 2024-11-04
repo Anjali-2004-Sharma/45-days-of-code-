@@ -1,0 +1,33 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read the number of test cases
+        int T = scanner.nextInt();
+        
+        // Process each test case
+        for (int t = 0; t < T; t++) {
+            // Read coordinates A, B and the maximum step size K
+            int A = scanner.nextInt();
+            int B = scanner.nextInt();
+            int K = scanner.nextInt();
+            
+            // Calculate the distance between A and B
+            int distance = Math.abs(A - B);
+            
+            // Calculate the minimum number of steps required
+            int steps = (int) Math.ceil((double) distance / K);
+            
+            // Output the result
+            System.out.println(steps);
+        }
+        
+        scanner.close();
+    }
+}
