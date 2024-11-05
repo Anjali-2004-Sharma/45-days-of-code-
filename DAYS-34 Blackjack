@@ -1,0 +1,33 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner sc = new Scanner(System.in);
+        
+        // Read the number of test cases
+        int T = sc.nextInt();
+        
+        // Process each test case
+        for (int t = 0; t < T; t++) {
+            // Read the first two numbers A and B
+            int A = sc.nextInt();
+            int B = sc.nextInt();
+            
+            // Calculate the required third number C
+            int requiredC = 21 - (A + B);
+            
+            // Check if the third number is between 1 and 10
+            if (requiredC >= 1 && requiredC <= 10) {
+                System.out.println(requiredC);
+            } else {
+                System.out.println(-1);
+            }
+        }
+        
+        sc.close();
+    }
+}
