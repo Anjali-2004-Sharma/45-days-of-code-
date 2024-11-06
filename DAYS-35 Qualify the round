@@ -1,0 +1,36 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        // Scanner to read input
+        Scanner sc = new Scanner(System.in);
+        
+        // Read the number of test cases
+        int T = sc.nextInt();
+        
+        // Process each test case
+        for (int t = 0; t < T; t++) {
+            // Read the values for each test case
+            int X = sc.nextInt();
+            int A = sc.nextInt();
+            int B = sc.nextInt();
+            
+            // Calculate the total score
+            int totalScore = A + 2 * B;
+            
+            // Check if Chef qualifies
+            if (totalScore >= X) {
+                System.out.println("Qualify");
+            } else {
+                System.out.println("NotQualify");
+            }
+        }
+        
+        // Close the scanner
+        sc.close();
+    }
+}
