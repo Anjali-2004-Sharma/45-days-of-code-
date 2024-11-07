@@ -1,0 +1,22 @@
+# Function to solve the problem
+def car_or_bike(T, test_cases):
+    for i in range(T):
+        X, Y = test_cases[i]
+        if X < Y:
+            print("BIKE")
+        elif X > Y:
+            print("CAR")
+        else:
+            print("SAME")
+
+# Input reading
+T = int(input())  # Read number of test cases
+test_cases = []
+
+# Reading the test cases
+for _ in range(T):
+    X, Y = map(int, input().split())
+    test_cases.append((X, Y))
+
+# Call the function to process the test cases
+car_or_bike(T, test_cases)
