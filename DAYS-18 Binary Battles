@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class BinaryBattles {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read number of test cases
+        int T = scanner.nextInt();
+        
+        // Process each test case
+        for (int t = 0; t < T; t++) {
+            int N = scanner.nextInt();  // Number of teams
+            int A = scanner.nextInt();  // Duration of each round in minutes
+            int B = scanner.nextInt();  // Break time between rounds in minutes
+            
+            // Calculate the number of rounds (log2(N))
+            int rounds = (int)(Math.log(N) / Math.log(2));
+            
+            // Total time: rounds * A + (rounds - 1) * B
+            int totalTime = rounds * A + (rounds - 1) * B;
+            
+            // Output the result for this test case
+            System.out.println(totalTime);
+        }
+        
+        scanner.close();
+    }
+}
