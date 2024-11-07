@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class DraculaEats {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read number of test cases
+        int T = scanner.nextInt();
+        
+        // Process each test case
+        for (int t = 0; t < T; t++) {
+            int N = scanner.nextInt();
+            
+            // Calculate number of Tuesdays within N days
+            if (N < 2) {
+                System.out.println(0);
+            } else {
+                int numTuesdays = (N - 2) / 7 + 1;
+                System.out.println(numTuesdays);
+            }
+        }
+        
+        scanner.close();
+    }
+}
