@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class TestScore {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read number of test cases
+        int T = scanner.nextInt();
+        
+        // Process each test case
+        for (int t = 0; t < T; t++) {
+            int N = scanner.nextInt();  // Number of problems
+            int X = scanner.nextInt();  // Marks per problem
+            int Y = scanner.nextInt();  // Desired score
+            
+            // Check if Y is achievable
+            if (Y % X == 0 && Y <= N * X) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
+        }
+        
+        scanner.close();
+    }
+}
