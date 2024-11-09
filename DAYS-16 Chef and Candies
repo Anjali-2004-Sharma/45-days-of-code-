@@ -1,0 +1,38 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner sc = new Scanner(System.in);
+        
+        // Number of test cases
+        int T = sc.nextInt();
+        
+        // Process each test case
+        for (int t = 0; t < T; t++) {
+            // Read N (number of children) and X (candies Chef already has)
+            int N = sc.nextInt();
+            int X = sc.nextInt();
+            
+            // If Chef already has enough candies, no packets are needed
+            if (X >= N) {
+                System.out.println(0);
+            } else {
+                // Calculate the deficit (candies Chef still needs)
+                int deficit = N - X;
+                
+                // Calculate the number of packets needed
+                // Each packet contains 4 candies, so we round up the deficit / 4
+                int packetsNeeded = (deficit + 3) / 4;
+                
+                System.out.println(packetsNeeded);
+            }
+        }
+        
+        // Close the scanner
+        sc.close();
+    }
+}
