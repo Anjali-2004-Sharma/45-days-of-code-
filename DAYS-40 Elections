@@ -1,0 +1,78 @@
+import java.util.*;
+
+public class Election {
+
+    public static void main(String[] args) {
+        // Reading input
+        Scanner sc = new Scanner(System.in);
+        
+        int T = sc.nextInt(); // Number of test cases
+        
+        // Process each test case
+        while (T-- > 0) {
+            int N = sc.nextInt(); // Number of states
+            int X = sc.nextInt(); // Number of votes Chef can cast
+            
+            int[] A = new int[N]; // Votes for candidate A
+            int[] B = new int[N]; // Votes for candidate B
+            
+            for (int i = 0; i < N; i++) {
+                A[i] = sc.nextInt();
+            }
+            
+            for (int i = 0; i < N; i++) {
+                B[i] = sc.nextInt();
+            }
+            
+            // List to track the number of votes needed to flip a state
+            List<Integer> neededVotes = new ArrayList<>();
+            
+            // Count the states that A is already winning
+            int statesAWin = 0;
+            
+            for (int i = 0; i < N; i++) {
+                if (A[i] > B[i]) {
+                    statesAWin++;
+                } else if (A[i] == B[i]) {
+                    // A and B are tied, Chef can flip it with 1 vote
+                    neededVotes.add(1);
+                } else {
+                    // B is winning, calculate how many votes are needed for A to win
+                    neededVotes.add(B[i] - A[i] + 1);
+                }
+            }
+            
+            // We need A to win more than half the states
+            int requiredWins = (N / 2) + 1;
+            
+            // If A is already winning enough states, print "YES"
+            if (statesAWin >= requiredWins) {
+                System.out.println("YES");
+                continue;
+            }
+            
+            // Sort the neededVotes in ascending order to use the least number of votes first
+            Collections.sort(neededVotes);
+            
+            // Try to flip enough states to reach the required number of wins
+            for (int votesNeeded : neededVotes) {
+                if (X >= votesNeeded) {
+                    X -= votesNeeded;
+                    statesAWin++;
+                }
+                if (statesAWin >= requiredWins) {
+                    break;
+                }
+            }
+            
+            // Check if A can win enough states
+            if (statesAWin >= requiredWins) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
+        }
+        
+        sc.close();
+    }
+}
