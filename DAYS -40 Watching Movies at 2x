@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class ChefWatchingMovie {
+    public static void main(String[] args) {
+        // Scanner object to read input
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read the input values X and Y
+        int X = scanner.nextInt();
+        int Y = scanner.nextInt();
+        
+        // Time spent watching the first Y minutes at 2x speed
+        int timeAt2xSpeed = Y / 2;
+        
+        // Time spent watching the remaining (X - Y) minutes at normal speed
+        int remainingTime = X - Y;
+        
+        // Total time spent watching the movie
+        int totalTime = timeAt2xSpeed + remainingTime;
+        
+        // Output the result
+        System.out.println(totalTime);
+        
+        // Close the scanner
+        scanner.close();
+    }
+}
