@@ -1,0 +1,37 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt(); // Number of test cases
+
+        while (T-- > 0) {
+            // Reading N, X, Y for each test case
+            int N = sc.nextInt();
+            int X = sc.nextInt();
+            int Y = sc.nextInt();
+
+            // Calculating the number of cells under attack
+            int rowAttacks = N - 1;
+            int colAttacks = N - 1;
+
+            // Diagonal attacks
+            int topLeftDiagonal = Math.min(X - 1, Y - 1);
+            int bottomRightDiagonal = Math.min(N - X, N - Y);
+            int topRightDiagonal = Math.min(X - 1, N - Y);
+            int bottomLeftDiagonal = Math.min(N - X, Y - 1);
+
+            // Total attackable cells
+            int totalAttacks = rowAttacks + colAttacks + topLeftDiagonal + bottomRightDiagonal + topRightDiagonal + bottomLeftDiagonal;
+
+            // Output the result for the current test case
+            System.out.println(totalAttacks);
+        }
+
+        sc.close();
+    }
+}
