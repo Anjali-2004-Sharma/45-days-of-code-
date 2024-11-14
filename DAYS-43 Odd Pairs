@@ -1,0 +1,29 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt();  // Number of test cases
+
+        // Loop through all test cases
+        for (int t = 0; t < T; t++) {
+            int N = scanner.nextInt();  // Value of N for the current test case
+
+            // Calculate odd and even counts
+            int oddCount = (N + 1) / 2;  // Number of odd numbers from 1 to N
+            int evenCount = N / 2;       // Number of even numbers from 1 to N
+
+            // Calculate the number of valid pairs (A, B) such that A + B is odd
+            long validPairs = 2L * oddCount * evenCount;
+
+            // Output the result for the current test case
+            System.out.println(validPairs);
+        }
+
+        scanner.close();
+    }
+}
