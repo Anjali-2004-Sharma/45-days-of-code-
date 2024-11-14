@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class PassOrFail {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read number of test cases
+        int T = scanner.nextInt();
+        
+        // Process each test case
+        for (int t = 0; t < T; t++) {
+            // Read the values for N, X, and P
+            int N = scanner.nextInt();
+            int X = scanner.nextInt();
+            int P = scanner.nextInt();
+            
+            // Calculate the total score Chef gets
+            int totalScore = 4 * X - N;
+            
+            // Determine if Chef passes or fails
+            if (totalScore >= P) {
+                System.out.println("PASS");
+            } else {
+                System.out.println("FAIL");
+            }
+        }
+        
+        scanner.close();
+    }
+}
