@@ -1,0 +1,28 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner sc = new Scanner(System.in);
+
+        int T = sc.nextInt();  // Number of test cases
+        while (T-- > 0) {
+            int N = sc.nextInt();  // Number of episodes
+            int A = sc.nextInt();  // Duration of even indexed episodes
+            int B = sc.nextInt();  // Duration of odd indexed episodes
+
+            // Calculate the number of odd and even indexed episodes
+            int oddEpisodes = (N + 1) / 2;  // (N + 1) / 2 gives the count of odd indexed episodes
+            int evenEpisodes = N / 2;       // N / 2 gives the count of even indexed episodes
+
+            // Calculate the total duration
+            int totalDuration = (oddEpisodes * B) + (evenEpisodes * A);
+            System.out.println(totalDuration);
+        }
+
+        sc.close();
+    }
+}
