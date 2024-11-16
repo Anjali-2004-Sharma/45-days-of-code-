@@ -1,0 +1,28 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+
+{
+        Scanner scanner = new Scanner(System.in);
+
+        // Input number of test cases
+        int T = scanner.nextInt();
+
+        // Iterate through each test case
+        for (int t = 0; t < T; t++) {
+            int N = scanner.nextInt();
+
+            // Calculate the number of coins required
+            int coinsRequired = (N / 5) * 4 + (N % 5);
+            
+            // Output the result
+            System.out.println(coinsRequired);
+        }
+
+        scanner.close();
+}
+        }
