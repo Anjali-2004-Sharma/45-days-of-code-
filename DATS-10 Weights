@@ -1,0 +1,36 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner scanner = new Scanner(System.in);
+
+        // Read number of test cases
+        int T = scanner.nextInt();
+        StringBuilder result = new StringBuilder();
+
+        // Process each test case
+        for (int t = 0; t < T; t++) {
+            int W = scanner.nextInt(); // Target weight
+            int X = scanner.nextInt(); // Weight 1
+            int Y = scanner.nextInt(); // Weight 2
+            int Z = scanner.nextInt(); // Weight 3
+
+            // Check all possible combinations
+            if (W == X || W == Y || W == Z ||        // Single weights
+                W == (X + Y) || W == (X + Z) || W == (Y + Z) || // Two weights
+                W == (X + Y + Z)) {                 // All three weights
+                result.append("YES\n");
+            } else {
+                result.append("NO\n");
+            }
+        }
+
+        // Output all results
+        System.out.print(result);
+        scanner.close();
+    }
+}
