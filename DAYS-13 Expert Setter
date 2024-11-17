@@ -1,0 +1,30 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner sc = new Scanner(System.in);
+        
+        // Read number of test cases
+        int T = sc.nextInt();
+        
+        // Process each test case
+        for (int t = 0; t < T; t++) {
+            // Read X (total problems) and Y (approved problems)
+            int X = sc.nextInt();
+            int Y = sc.nextInt();
+            
+            // Check if at least 50% of the problems are approved
+            if (2 * Y >= X) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
+        }
+        
+        sc.close();
+    }
+}
