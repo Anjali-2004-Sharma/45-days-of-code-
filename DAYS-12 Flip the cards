@@ -1,0 +1,29 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner sc = new Scanner(System.in);
+        
+        // Read the number of test cases
+        int T = sc.nextInt();
+        
+        // Process each test case
+        for (int t = 0; t < T; t++) {
+            // Read N and X
+            int N = sc.nextInt();
+            int X = sc.nextInt();
+            
+            // Calculate the minimum number of flips
+            int flips = Math.min(X, N - X);
+            
+            // Output the result
+            System.out.println(flips);
+        }
+        
+        sc.close();
+    }
+}
