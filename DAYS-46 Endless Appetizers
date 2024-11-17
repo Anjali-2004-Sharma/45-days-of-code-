@@ -1,0 +1,36 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner sc = new Scanner(System.in);
+        
+        // Read the number of test cases
+        int T = sc.nextInt();
+        
+        // Process each test case
+        for (int t = 0; t < T; t++) {
+            // Read X, Y, R for the current test case
+            int X = sc.nextInt();
+            int Y = sc.nextInt();
+            int R = sc.nextInt();
+            
+            // Calculate the number of extra sticks Chef ate
+            int extraSticks = R / 30;
+            
+            // Calculate the total number of sticks Chef ate
+            int totalSticks = X + extraSticks;
+            
+            // Calculate the number of plates required (use ceiling to account for partial plates)
+            int plates = (totalSticks + Y - 1) / Y;  // This is the integer version of ceil(totalSticks / Y)
+            
+            // Output the result for the current test case
+            System.out.println(plates);
+        }
+        
+        sc.close();
+    }
+}
