@@ -1,0 +1,36 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+{
+
+        Scanner scanner = new Scanner(System.in);
+
+        // Read number of test cases
+        int T = scanner.nextInt();
+        StringBuilder result = new StringBuilder();
+
+        // Process each test case
+        for (int t = 0; t < T; t++) {
+            int X = scanner.nextInt(); // Monthly rent cost
+            int Y = scanner.nextInt(); // Purchase cost
+
+            // Calculate maximum months
+            int maxMonths = Y / X;
+
+            // Ensure renting is strictly less than purchasing
+            if (maxMonths * X >= Y) {
+                maxMonths -= 1;
+            }
+
+            result.append(maxMonths).append("\n");
+        }
+
+        // Output all results
+        System.out.print(result);
+        scanner.close();
+    }
+}
