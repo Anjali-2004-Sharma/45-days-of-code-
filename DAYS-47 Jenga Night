@@ -1,0 +1,29 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner sc = new Scanner(System.in);
+
+        // Number of test cases
+        int T = sc.nextInt();
+
+        // Process each test case
+        for (int t = 0; t < T; t++) {
+            int N = sc.nextInt(); // Number of players
+            int X = sc.nextInt(); // Number of tiles
+
+            // Check if the number of tiles is divisible by the number of players
+            if (X % N == 0) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
+        }
+
+        sc.close();
+    }
+}
