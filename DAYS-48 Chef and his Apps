@@ -1,0 +1,33 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt(); // Number of test cases
+
+        while (T-- > 0) {
+            int S = sc.nextInt(); // Total storage
+            int X = sc.nextInt(); // Memory used by app 1
+            int Y = sc.nextInt(); // Memory used by app 2
+            int Z = sc.nextInt(); // Memory required by new app
+
+            int unusedMemory = S - (X + Y); // Calculate unused memory
+            if (unusedMemory >= Z) {
+                // Case 1: Enough unused memory
+                System.out.println(0);
+            } else if (unusedMemory + Math.max(X, Y) >= Z) {
+                // Case 2: Deleting one app is sufficient
+                System.out.println(1);
+            } else {
+                // Case 3: Deleting both apps is necessary
+                System.out.println(2);
+            }
+        }
+
+        sc.close();
+    }
+}
