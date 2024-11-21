@@ -1,0 +1,47 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        
+
+
+        Scanner scanner = new Scanner(System.in);
+
+        // Number of test cases
+        int T = scanner.nextInt();
+
+        // Process each test case
+        for (int t = 0; t < T; t++) {
+            // Read input
+            int N = scanner.nextInt();
+            String S = scanner.next();
+
+            // Encoded result
+            StringBuilder encoded = new StringBuilder();
+
+            // Iterate through the binary string in pairs
+            for (int i = 0; i < N; i += 2) {
+                String pair = S.substring(i, i + 2);
+                switch (pair) {
+                    case "00":
+                        encoded.append("A");
+                        break;
+                    case "01":
+                        encoded.append("T");
+                        break;
+                    case "10":
+                        encoded.append("C");
+                        break;
+                    case "11":
+                        encoded.append("G");
+                        break;
+                }
+            }
+
+            // Output the encoded string
+            System.out.println(encoded);
+        }
+
+        scanner.close();
+    }
+}
