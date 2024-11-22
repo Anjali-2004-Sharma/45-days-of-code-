@@ -1,0 +1,44 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner scanner = new Scanner(System.in);
+
+        // Read number of test cases
+        int T = scanner.nextInt();
+        for (int t = 0; t < T; t++) {
+            // Read N for the current test case
+            int N = scanner.nextInt();
+            
+            // Initialize counters for even and odd divisors
+            int evenCount = 0;
+            int oddCount = 0;
+            
+            // Find divisors of N
+            for (int i = 1; i <= N; i++) {
+                if (N % i == 0) { // i is a divisor of N
+                    if (i % 2 == 0) {
+                        evenCount++;
+                    } else {
+                        oddCount++;
+                    }
+                }
+            }
+            
+            // Compare and output result
+            if (evenCount > oddCount) {
+                System.out.println(1);
+            } else if (evenCount == oddCount) {
+                System.out.println(0);
+            } else {
+                System.out.println(-1);
+            }
+        }
+
+        scanner.close();
+    }
+}
