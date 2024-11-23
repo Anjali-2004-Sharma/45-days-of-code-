@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class WATestCases {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt(); // Number of test cases
+        StringBuilder result = new StringBuilder();
+
+        for (int t = 0; t < T; t++) {
+            int N = sc.nextInt(); // Number of test cases in this problem
+            int[] sizes = new int[N];
+            for (int i = 0; i < N; i++) {
+                sizes[i] = sc.nextInt(); // Sizes of the test cases
+            }
+            String verdict = sc.next(); // Binary string indicating pass/fail
+
+            int minSize = Integer.MAX_VALUE;
+            for (int i = 0; i < N; i++) {
+                if (verdict.charAt(i) == '0') { // Check if the test case failed
+                    minSize = Math.min(minSize, sizes[i]);
+                }
+            }
+
+            result.append(minSize).append("\n");
+        }
+
+        System.out.print(result.toString());
+        sc.close();
+    }
+}
