@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class IncrementDecrement {
+    public static void main(String[] args) {
+        // Create a Scanner object for input
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the input number
+        int N = scanner.nextInt();
+
+        // Check if the number is divisible by 4
+        if (N % 4 == 0) {
+            N += 1; // Increment by 1
+        } else {
+            N -= 1; // Decrement by 1
+        }
+
+        // Output the result
+        System.out.println(N);
+
+        // Close the scanner
+        scanner.close();
+    }
+}
