@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class PassingMarks {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt(); // Number of test cases
+        
+        while (T-- > 0) {
+            int N = sc.nextInt(); // Number of students
+            int X = sc.nextInt(); // Number of students who pass
+            
+            int[] A = new int[N];
+            for (int i = 0; i < N; i++) {
+                A[i] = sc.nextInt(); // Scores of students
+            }
+            
+            // Sort the scores in descending order
+            Arrays.sort(A);
+            
+            // Find the Xth highest score
+            int passingMark = (X == 0) ? 0 : A[N - X] - 1;
+            
+            // Output the result
+            System.out.println(passingMark);
+        }
+        sc.close();
+    }
+}
